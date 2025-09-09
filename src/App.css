@@ -1,0 +1,63 @@
+/* make sure the root fills the screen */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width : 100%;
+}
+
+/* parent grid fills full height */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 10% 90%;  /* header takes 90%, footer 10% */
+  height: 100%;
+}
+
+/* header spans full width */
+.header {
+  grid-column: 1 / -1;
+  background-color: rgba(29, 120, 206, 0.9);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* footer spans full width */
+.footer {
+  grid-column: 1 / -1;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* signup button */
+.signup {
+  background-color: white;
+  color : black;
+  border: 2px solid blue;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* login button */
+.daylight {
+  background-color: rgba(29, 120, 206, 0.9);
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  font-size:16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.contact{
+  background-color:blue;
+  color:white;
+  
+}

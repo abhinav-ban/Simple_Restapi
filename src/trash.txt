@@ -1,0 +1,53 @@
+.signup{
+    background-color: white;
+    border: 2px solid blue;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.daylight{
+    background-color: rgba(29, 120, 206, 0.672);
+    color: white;
+    border-radius: 5px;
+    font-size:16px;
+    padding: 10px 20px;
+}
+ok so i am gonna make a normal web page for having get post button with resizabel windows when someone click on the get 
+buttonthe window will spilt in half on left and for post in right
+bc maine env galti se root directory mai bana diya aur mujhe use my-app mai jaakar activate karna padega aur run karne ke lye "python bacend\file"
+asie karna padega
+import React, { useState } from "react";
+import "./App.css";
+
+function Use(){
+    const[m,setM]=useState("")
+    const handleGet = async () => {
+    const response = await fetch("http://127.0.0.1:5000/get");
+    const data = await response.json();
+    setM(JSON.stringify(data));
+  };
+   const handlePost = async () => {
+    const response = await fetch("http://127.0.0.1:5000/post", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ value: "New Data" }),
+    });
+    const data = await response.json();
+    setM(JSON.stringify(data));
+  };
+}
+
+function App(){
+    return(
+        <div className="parent">
+            <header className="header">HANNITY</header>
+            <footer className="footer">
+                <button className="daylight" onClick={Use.handleGet}>GET</button>
+                <button className="signup" onClick={Use.handlePost}>POST</button>
+            </footer>
+        </div>
+    
+);
+}
+export default App;
